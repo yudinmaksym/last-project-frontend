@@ -1,0 +1,32 @@
+# options:
+#   docker: true
+
+pipelines:
+  branches:
+    dev:
+      - step:
+          size: 2x
+          #python image with aws-cli installed
+          image: tstrohmeier/awscli:3.6.4
+          script:
+            - export $(grep -v '^#' .env.stage | xargs -d '\n')
+            - /bin/bash deploy.${DOCKER_ENV}.sh
+          services:
+            - docker
+    master:
+      - step:
+          caches:
+            - docker
+          size: 2x
+          #python image with aws-cli installed
+          image: tstrohmeier/awscli:3.6.4
+          script:
+            - export $(grep -v '^#' .env.prod | xargs -d '\n')
+            - /bin/bash deploy.${DOCKER_ENV}.sh
+          services:
+            - docker
+definitions:
+  services:
+    docker:
+      memory: 4096
+  

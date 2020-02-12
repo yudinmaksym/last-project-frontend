@@ -1,0 +1,124 @@
+.portfolio_table {
+    & .ReactTable {
+        width: 100%;
+        
+
+        .overr {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            justify-content: space-between;
+        }
+
+        & .rt-tbody .rt-td {
+            overflow: inherit;
+            padding: 10px 13px;
+            font-size: 0.8125rem!important;
+            justify-content: center!important;
+        }
+
+        & .rt-thead {
+            & .rt-th {
+                background-color: #202875;
+                color: #fff;
+                padding: 13px 10px;
+            }
+        }
+
+        .overr {
+            .color {
+                &.green {
+                    color: green;
+                }
+            
+                &.red {
+                    color: red;
+                }
+            
+                &.orange {
+                    background-color: orange;
+                }
+            } 
+        }
+
+        .last_connection {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            margin-right: 15px;
+            display: inline-block;
+
+            &.green {
+                background-color: #B4F6BA;
+            }
+            &.red {
+                background-color: #ECA29F;
+            }
+        }
+        
+
+        .accuracy_block {
+            min-width: 25px;
+            height: 25px;
+            line-height: 25px;
+            border-color: transparent;
+            padding: 0;
+
+            &.dark-green {
+                background-color: #B4F6BA;
+                color: #000;
+            }
+
+            &.green {
+                background-color: #B4F6BA;
+                color: #000;
+            }
+
+            &.red {
+                background-color: #ECA29F;
+                color: #000;
+            }
+
+            &.orange {
+                background-color: #FCEF03;
+                color: #000;
+            }
+
+            &.grey {
+                background-color: #eeeeee;
+                color: #000;
+            }
+        }
+    }
+    
+    &_menu {
+        &-drp {
+            background-color: transparent;
+            border: 1px solid transparent;
+            color: #353E45;
+            outline: 0;
+            width: 44px;
+            height: 32px;
+            text-decoration: none;
+
+            &:hover,
+            &:focus,
+            &:active {
+                background-color: transparent;
+                border: none;
+                box-shadow: none;
+            }
+        }
+    }
+
+    &_menu.show {
+        text-align: center;
+
+        .lobby-table_menu-drp {
+            background-color: #016CA0;
+            border: 1px solid #1E73BE26;
+            border-radius: 100px;
+            color: #ffffff;
+        }
+    }
+}

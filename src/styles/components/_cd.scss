@@ -1,0 +1,117 @@
+.container--cd {
+
+  .cd-profit-stats {
+    h4 {
+      font-weight: $up-user-details-stats-title-font-weight;
+    }
+  
+    span {
+      font-size: $up-user-details-stats-subtitle-font-size;
+    }
+
+    &__item {
+      border-right: 1px solid #e1e5eb;
+
+      &:last-child {
+        border-right: none;
+      }
+    }
+  }
+
+  .cd-project-select {
+    max-width: 20rem;
+  }
+
+  .cd-options {
+    height: 38px;
+  }
+
+  .cd-input {
+    margin: 0px;
+    max-width: 80px;
+
+    .form-control {
+      max-height: 25px;
+    }
+
+    .input-group-append {
+      max-height: 25px;
+
+      .input-group-text {
+        width: 32px;
+        padding: 0.15rem .20rem;
+      }
+    }
+  }
+
+  .tk-table__wrapper__table__header__column,
+  .tk-table__wrapper__table__body__column {
+    padding: .15rem 0.8rem .15rem 0rem !important;
+    font-size: 90%;
+
+    &--fixed {
+      font-size: 100%;
+      padding: .15rem 0.8rem !important;
+    }
+  }
+
+  .editable-field {
+    font-size: inherit;
+    border-color: none;
+    border: 1px solid transparent;
+    
+    display: inline-block;
+    position: relative;
+
+    &__icon {
+      pointer-events: none;
+      position: absolute;
+      top: 50%;
+      font-size: 90%;
+      transform: translate(2px, -60%);
+      visibility: hidden;
+    }
+
+    &--focus {
+      .editable-field__icon {
+        visibility: hidden;
+      }
+    }
+
+    &:hover {  
+      &.editable-field--nofocus {
+        .editable-field__icon {
+          visibility: visible;
+        }
+      }
+    }
+
+    &__control {
+      font-size: inherit;
+      
+      &:focus,
+      &:active {
+        cursor: inherit;
+
+        &.form-control {
+          background-color: transparent;
+        }
+      }
+
+      &--editable {
+        cursor: pointer;
+      }
+
+      &.form-control {
+        border-radius: 0.25em;
+        background-color: rgba(229, 229, 229, 0.2);
+        font-size: 0.6875rem;
+        line-height: 1.5;
+        border-color: transparent;
+        margin: -3px 0px;
+        padding: 2px 15px 2px 0px;
+        transform: translate(15px, 0px);      
+      }
+    }
+  }  
+}

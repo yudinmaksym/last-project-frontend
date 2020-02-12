@@ -1,0 +1,159 @@
+$energy-bar-height: 24px; 
+$energy-bar-radius: 16px; 
+
+.energy-performance-bar {
+  display: flex;
+  flex: 1;
+  height: $energy-bar-height;
+  margin: 20px 0px;
+  position: relative;
+  // pointer-events: none;
+
+  &__line {
+    position: absolute;
+    display: flex;
+    top: 0px;
+    width: 100%;
+    flex: 1;
+    margin: $energy-bar-height / 4 0px;
+    height: $energy-bar-height / 4;
+    background-color: darken($athens-gray, 10);
+    border-radius: $energy-bar-radius;
+
+    &__level {
+      flex: 1;
+      height: 100%;//energy-bar-height / 2;
+
+      &:first-child {
+        border-top-left-radius: $energy-bar-radius;
+        border-bottom-left-radius: $energy-bar-radius;
+      }
+      
+      &:last-child {
+        border-top-right-radius: $energy-bar-radius;
+        border-bottom-right-radius: $energy-bar-radius;
+      }
+    }
+  }
+
+  &__levels {
+    flex: 1;
+    display: flex;
+    margin: $energy-bar-height / 4 0px;
+
+    height: $energy-bar-height / 4;
+    position: relative;
+    border-radius: $energy-bar-radius;
+
+    &__point {
+      flex: 1;
+      display: flex;
+      position: relative;
+      // justify-content: center;
+      height: 100%;//energy-bar-height / 2;
+      // border-radius: $energy-bar-radius;
+      
+      &--first {
+        border-top-left-radius: $energy-bar-radius;
+        border-bottom-left-radius: $energy-bar-radius;
+      }
+      
+      &--last {
+        border-top-right-radius: $energy-bar-radius;
+        border-bottom-right-radius: $energy-bar-radius;
+      }
+
+      &__tooltip {
+        position: absolute;
+        bottom: 0px;
+        right: 0px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        min-width: 42px;
+        color: #a8aeb4;
+
+        padding: 2px 8px;
+        transform: translate3d(16%, -170%, 0);
+
+        border-radius: .375rem;
+        background: #fff;
+        color: #5a6169;
+        box-shadow: 0 3px 15px rgba(90,97,105,.1), 0 2px 3px rgba(90,97,105,.2);
+        label {
+          margin: 0px;
+        }
+      }
+
+      &__value {
+        position: absolute;
+        right: 0px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: $energy-bar-height;
+        height: $energy-bar-height;
+        background: darken($athens-gray, 20);
+
+        border: 1px solid #F5F6F8;
+        border-radius: 50%;
+        
+        // 
+        // color: #F5F6F8;
+        color: white;//darken($athens-gray, 20);
+        // font-weight: bold;
+        
+        transform: translate3d(-10%, -40%, 0);
+
+        &--active {
+          border-width: 2px;
+          border-color: #F5F6F8;
+          color: #F5F6F8;
+
+          transform: scale(1.4) translate3d(10%, -30%, 0);
+        }
+      }
+    }
+  }
+  
+  &__level {
+    position: absolute;
+    flex: 1;
+    margin: $energy-bar-height / 2 0px;
+    height: $energy-bar-height / 4;
+    // transform: translate3d(0px, 20px, 0px);
+    
+    &--corner {
+      // float: right;
+      position: absolute;
+      left: 50%;
+
+      width: $energy-bar-height;
+      height: $energy-bar-height;
+      background: red;
+
+      border: 3px solid #F5F6F8;
+      border-radius: 50%;
+
+      transform: translate3d(0, -25%, 0);
+    }
+
+    &:first-child {
+      border-top-left-radius: $energy-bar-radius;
+      border-bottom-left-radius: $energy-bar-radius;
+    }
+    
+    &:last-child {
+      border-top-right-radius: $energy-bar-radius;
+      border-bottom-right-radius: $energy-bar-radius;
+    }
+  }
+}
+
+.project-energy-score {
+  min-height: 120px;
+}

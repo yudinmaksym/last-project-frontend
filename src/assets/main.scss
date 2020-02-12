@@ -1,0 +1,32 @@
+// Main Stylesheet
+
+// Main SDP Styles
+@import "../styles/shards-dashboards";
+
+// Variables
+@import "./variables";
+
+// Plugin Styles
+@import "./dropzone";
+@import "./dateselector";
+@import "./quill";
+@import "./range-date-picker";
+@import "./file-manager-list";
+@import "./react-tagsinput";
+@import "./react-big-calendar";
+
+@import "./upload";
+@import "./manual";
+@import "./projects";
+@import "./meters";
+@import "./auth";
+@import "./metrics";
+@import "./map";
+@import "./spinners";
+@import "./print";
+
+
+// bootstrap fixes
+.list-group-item + .list-group-item {
+    border-top-width: 1px !important;
+}

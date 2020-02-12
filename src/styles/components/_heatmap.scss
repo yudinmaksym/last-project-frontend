@@ -1,0 +1,133 @@
+.heatmap-container {
+  min-height: 400px;
+
+  &__col {
+    padding: 0.25rem !important;
+    vertical-align: middle !important;
+    height: 44px;
+
+    &--empty {
+      min-width: 80px;
+    }
+
+    &--meter {
+      white-space: nowrap;
+      text-align: center;
+      font-weight: 700;
+      height: 74px;
+      margin: 0.25rem !important;
+      padding: 0 !important;
+      font-size: 12px;
+      line-height: 0.8;
+        > div {
+          position: relative;
+          top: 0;
+          left: 37px; /* 80 * tan(45) / 2 = 40 where 80 is the height on the cell and 45 is the transform angle*/
+          height: 100%;
+          -ms-transform:skew(-45deg,0deg);
+          -moz-transform:skew(-45deg,0deg);
+          -webkit-transform:skew(-45deg,0deg);
+          -o-transform:skew(-45deg,0deg);
+          transform:skew(-45deg,0deg);
+          overflow: hidden;
+          border-left: 1px solid #999;
+          display: flex;
+          justify-content: center;
+          align-items: center;  
+        }
+        > div > span {
+          -ms-transform:skew(45deg,0deg) rotate(315deg);
+          -moz-transform:skew(45deg,0deg) rotate(315deg);
+          -webkit-transform:skew(45deg,0deg) rotate(315deg);
+          -o-transform:skew(45deg,0deg) rotate(315deg);
+          transform:skew(45deg,0deg) rotate(315deg);
+          position: absolute;
+          bottom: 30px; /* 40 cos(45) = 28 with an additional 2px margin*/
+          left: unset; /*Because it looked good, but there is probably a mathematical link here as well*/
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          // width: 100%;
+          width: 85px; /* 80 / cos(45) - 40 cos (45) = 85 where 80 is the height of the cell, 40 the width of the cell and 45 the transform angle*/
+          
+        }
+      &:last-child {
+        >  div {
+          border-right: 1px solid #999;
+        }
+      }
+    }
+
+    &--month {
+      z-index: 0;
+      white-space: nowrap;
+      text-align: center;
+      font-weight: 700;
+      max-width: 80px !important;
+      width: 10%;
+      background-color: white;
+      border: 0px;
+      border-right: 1px solid #dee2e6;
+    }
+
+    &--value {
+      color: #fff;
+      width: 80px !important;
+      min-width: 40px;
+      .form-group {
+        margin-bottom: 0px !important;
+      }
+      &:nth-of-type(odd) {
+        border-right: 1px solid #999;
+        
+      }
+      &:nth-of-type(even) {
+        border-right: 1px solid #999;
+      }
+    }
+  }
+
+  &__filldata {
+    background: blue;
+  }
+  .table {
+    tr {
+      position: relative;
+    }
+
+    tr:hover {
+      background-color: #f7f7f7 !important;
+    }
+  }
+
+  &__field {
+    text-align: right;
+  }
+  .card {
+    .card-header {
+      
+      .heatmap-select {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 15px;
+        .form-group {
+          flex: 1;
+          //margin-left: 15px;
+        &.text-filed {
+            
+          select {
+            max-width: 100% !important;
+            max-height: 38px !important;
+            min-height: 38px !important;
+            border: 1px solid #ccc;
+            font-size: 15px;
+
+          }
+          }
+        }
+      }
+    }
+  }
+}
+
+

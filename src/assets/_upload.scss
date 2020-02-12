@@ -1,0 +1,130 @@
+/* Upload */
+
+.upload-manager {
+  &__files {
+    &__item {
+
+      cursor: pointer;
+      user-select: none;
+      overflow: hidden;
+      position: relative;
+
+      .card-footer {
+        display: flex;
+      }
+
+      &-icon {
+        position: relative;
+        margin-right: $fm-block-item-icon-margin-right;
+        font-size: $fm-block-item-icon-font-size;
+        top: $fm-block-item-icon-top;
+
+        // Adjust material icons.
+        i.material-icons {
+          top: 0;
+        }
+      }
+
+      &-valid {
+        color: $accent-color;
+
+        height: $fm-block-selected-dir-check-height;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      &-name {
+        width: auto;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin: 0;
+        font-size: $fm-block-item-title-font-size;
+        padding-right: $fm-block-item-title-padding-right;
+      }
+      
+      &:before,
+      &:after {
+        content: '';
+        position: absolute;
+      }
+
+      // (selected) Check-mark
+      &:before {
+        background-repeat: no-repeat;
+        background-position: center center;
+        border-radius: $fm-block-selected-border-radius;
+        background-color: $fm-block-selected-check-bg-color;
+        background-image: $fm-block-selected-check-bg-image;
+        background-size: $fm-block-selected-check-bg-size;
+        width: $fm-block-selected-dir-check-width;
+        height: $fm-block-selected-dir-check-height;
+        top: $fm-block-selected-dir-check-top;
+        transform: $fm-block-selected-dir-check-transform;
+        right: $fm-block-selected-dir-check-right;
+        will-change: $fm-block-selected-will-change;
+        transition: $fm-block-selected-transition;
+        z-index: 2;
+      }
+
+      // (selected) Outline
+      &:after {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 100;
+        border-radius: $fm-block-selected-outline-border-radius;
+        box-shadow: $fm-block-selected-outline-box-shadow;
+        will-change: $fm-block-selected-outline-will-change;
+        transition: $fm-block-selected-outline-transition;
+      }
+
+      // Selected state modifier
+      &--selected {
+        // Check-mark
+        &:before {
+          right: $fm-block-selected-state-dir-check-right;
+          background-size: $fm-block-selected-state-dir-background-size;
+        }
+
+        // Outline
+        &:after {
+          box-shadow: $fm-block-selected-state-outline-box-shadow;
+        }
+      }
+    }
+
+    &__dropzone {
+      .dropzone {
+        min-height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+
+  &__edit {
+    &-type {
+      width: 100%;
+    }
+  }
+
+  .react-datepicker{ 
+    &-wrapper {
+      display: block;
+      width: 100%;
+    }
+
+
+    &__input-container {
+      width: 100%;
+    }
+  }
+}
+
+.react-datepicker-wrapper, .react-datepicker__input-container {
+  display: block !important;
+}

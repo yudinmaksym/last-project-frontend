@@ -1,0 +1,154 @@
+.page {
+  background: white;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 0.5cm;
+  box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
+  // user-select: none;
+
+  .card,
+  .card-body,
+  .card-header {
+    padding: 0px;
+    border-radius: 0;
+    background-color: transparent;
+  }
+
+  .row {
+    // background: green;
+  }
+
+  .card-body {
+    padding: 0px; 
+  }
+
+  .card {
+    pointer-events: none;
+    // z-index: 0;
+  }
+
+  &.size__A4 {  
+    // width: 21cm;
+    // height: 29.7cm; 
+  }
+
+  &__content {
+    // padding: 1cm;
+  }
+
+  &__table {
+    width: 100%;
+  }
+
+  &__header {
+    h1,
+    h3 {
+      margin: 0px;
+    }
+  }
+
+  #chart-1 {
+    width: auto;
+    height: auto;
+  }
+  #chart-2 {
+    width: auto;
+    height: auto;
+  }
+
+  &__section {
+    margin-top: 10mm;
+  }
+
+  &__table {
+    border-spacing: 0px;
+    border-collapse: separate;
+
+    padding: 0px;
+
+    &__column {
+      padding: 1mm 2mm;
+
+      &:last-child {
+        padding-right: 0px;
+      }
+
+      &--header {
+        text-align: center;
+        color: white;
+      }
+
+      &--energy {
+
+      }
+
+      &--electricity {
+
+      }
+
+      &--chw {
+
+      }
+
+      &--water {
+
+      }
+
+    }
+
+    &__values {
+      width: 100%;
+
+      &__column {
+        text-align: center;
+        padding: 0mm 2mm;
+
+        &--header {
+        }
+
+        &--cost {
+          // padding-left: 5mm;
+        }
+      }
+    }
+  }
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  body {
+    background: white;
+    width: 210mm !important;
+    height: 297mm !important;
+    // border: 1px solid red;
+  }
+
+  body, .page {
+    margin: 0;
+    box-shadow: 0;
+  }
+
+  .page {
+    margin: 0;
+    border: initial;
+    border-radius: initial;
+    width: initial;
+    min-height: initial;
+    box-shadow: initial;
+    background: initial;
+    page-break-after: always;
+
+    // overflow: hidden;
+    // border: 4px solid red;
+
+    padding: 20mm 20mm 0mm 20mm !important;
+
+    &__content {
+      
+    }
+  }
+}

@@ -1,0 +1,66 @@
+.month-year-selector {
+    display: flex;
+
+    .date-selector {
+        min-width: 100px;
+        position: relative;
+
+        &__value {
+            height: 38px !important;
+            background: transparent;
+            border: none;
+            text-align: center;
+            display: flex;
+            flex: 1;
+            padding-left: calc(50% - 1.2em);
+            text-align-last: center;
+            text-align-last: center;
+            box-shadow: none !important;
+            font-weight: 400;
+            color: #3D5170;
+            font-size: 1rem;
+        }
+
+        &__prev,
+        &__next {
+            left: 50%;
+            background: none;
+            line-height: 1.7rem;
+            text-align: center;
+            cursor: pointer;
+            position: absolute;
+            width: 0;
+            padding: 0;
+            border: 0.45rem solid transparent;
+            z-index: 1;
+            height: 10px;
+            width: 10px;
+            text-indent: -999em;
+            overflow: hidden;
+            transform: translate(-50%, -0%);
+        }
+
+        &__prev {
+            top: -10px;
+            border-bottom-color: #ccc;
+        }
+
+        &__next {
+            bottom: -10px;
+            border-top-color: #ccc;
+        }
+    }
+
+    .month-selector {
+        .custom-select {
+            padding-left: calc(50% - 1.2em);
+        }
+    }
+
+    .year-selector {
+        .custom-select {
+            padding-left: calc(50% - 1.4em);
+        }
+    }
+
+}

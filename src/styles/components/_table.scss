@@ -1,0 +1,86 @@
+.card-body {
+  .tk-table {
+    border-radius: 0 0 0.625rem 0.625rem;
+  }
+}
+
+.tk-table {
+  $t: &;
+  margin: 0px;
+  background-color: #fff;
+  transform: translate3d(0, 0, 0);
+
+  &--size {
+    &_small {
+      .table th, .table td {  
+        padding: .25rem 1rem;
+      }
+    }
+  }
+
+  &__wrapper {
+    // display: inline-block;
+    overflow: auto;
+    background-color: inherit;
+  
+    &__table {
+      margin: 0px;
+      background-color: inherit;
+      
+      &__header {
+        background-color: inherit;
+        
+        
+        &__column {
+          font-weight: bold;
+          &--fixed {
+            transform: translate3d(0, 0, 0);
+            position: absolute;
+            background-color: inherit;
+            border: none;
+            border-right: 1px solid #dee2e6;
+          }
+        }
+
+        &__row {
+          position: relative;
+          background-color: inherit;
+        }
+      }
+
+      &__body {
+        background-color: inherit;
+
+        &__column {
+          &--fixed {
+            transform: translate3d(0, 0, 0);
+            position: absolute;
+            background-color: inherit;
+            border-right: 1px solid #dee2e6;
+          }
+        }
+  
+        &__row {
+          position: relative;
+          background-color: inherit;
+
+          &.results {
+            color: #003f5c;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+
+  &--scrollable {
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+
+    #{$t}__wrapper {
+      width: 100%;
+    }
+  }
+
+}

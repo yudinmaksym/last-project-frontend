@@ -1,0 +1,22 @@
+{
+  "family": "${TASK_NAME}",
+  "networkMode": "bridge",
+  "containerDefinitions": [
+    {
+      "name": "${CONTAINER_NAME}",
+      "image": "${AWS_REGISTRY_URL}/${IMAGE_NAME}:${IMAGE_TAG}",     
+      "portMappings": [
+        {
+          "hostPort": ${PORT_MAPPING},
+          "protocol": "tcp",
+          "containerPort": ${PORT_MAPPING}
+        }
+      ]
+    }
+  ],
+  "requiresCompatibilities": [
+    "EC2"
+  ],
+  "memory": "512",
+  "cpu": "512"
+}

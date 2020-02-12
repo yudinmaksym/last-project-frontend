@@ -1,0 +1,60 @@
+/* List Component */
+
+.list {
+  border: none;
+  border-right: solid 1px #DDEFEF;
+  border-collapse: separate;
+  border-spacing: 0;
+
+  overflow-x: scroll;
+  overflow-y: visible;
+  width: 100%;
+
+  .header {
+    white-space: nowrap;
+
+    .column {
+      display: inline-block;
+      background-color: #DDEFEF;
+      border: none;
+      color: #336B6B;
+      padding: 10px;
+      text-align: left;
+      text-shadow: 1px 1px 1px #fff;
+      white-space: nowrap;
+
+      font-size: .8125rem;
+      padding: .4375rem 1.0625rem;
+      border-left: 1px solid #e1e5eb;
+      border-bottom: 1px solid #e1e5eb;
+    }
+  }
+  
+  .rows {
+    white-space: nowrap;
+    
+    .line {
+      white-space: nowrap;
+      
+      .column {
+        display: inline-block;
+        border: none;
+        color: #336B6B;
+        padding: 10px;
+        text-align: left;
+        text-shadow: 1px 1px 1px #fff;
+        white-space: nowrap;
+
+        font-size: .8125rem;
+        padding: .4375rem 1.0625rem;
+        border-left: 1px solid #e1e5eb;
+        border-bottom: 1px solid #e1e5eb;
+      }
+    }
+
+  }
+}
+
+.list-group-item {
+  margin-bottom: 1px !important;
+}

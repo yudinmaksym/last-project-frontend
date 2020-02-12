@@ -1,0 +1,53 @@
+.energy-item {
+    border-bottom: 1px solid #E1E6ED;
+    border-top: 1px solid #E1E6ED;
+    margin-bottom: 15px;
+    text-align: center;
+    background-color: #fbfbfb;
+
+    &_title {
+        color: #0077c6;
+        font-size: 16px;
+        margin: 5px;
+    }
+
+    &_value {
+        font-size: 36px;
+        color: #b9b9b9;
+        font-weight: bold;
+        margin: 5px;
+
+        &_unit {
+            color: #5d9fd9;
+            // margin-left: 15px;
+        }
+    }
+}
+
+.energy-stats {
+    &_small {
+        display: flex;
+        justify-content: space-between;
+
+        & .energy-item {
+            width: 48%;
+
+            &_title {
+                font-size: 14px;
+            }
+
+            &_value {
+                font-size: 18px;
+            }
+
+            &:nth-child(2) {
+                border-left: 1px solid #e0e5ec;
+            }
+
+            &:nth-child(1) {
+                border-right: 1px solid #e0e5ec;
+            }
+        }
+        
+    }
+}

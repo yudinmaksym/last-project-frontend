@@ -1,0 +1,92 @@
+.baseline-container {
+    min-height: 400px;
+
+    &__col {
+        padding: 0.25rem !important;
+        vertical-align: middle !important;
+        height: 44px;
+
+        &--empty {
+            min-width: 80px;
+        }
+
+        &--meter {
+            white-space: nowrap;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        &--month {
+            z-index: 0;
+            white-space: nowrap;
+            text-align: center;
+            font-weight: 700;
+            min-width: 80px;
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            border: 0px;
+            border-right: 1px solid #dee2e6;
+        }
+        
+        &--value {
+            text-align: right;
+            min-width: 120px;
+
+            .form-group {
+                margin-bottom: 0px !important;
+            }
+        }
+    }
+
+    .table {
+        tr {
+            position: relative;
+        }
+
+        tr:hover {
+            background-color: #f7f7f7  !important;
+        }
+    }
+
+    &__field {
+        text-align: right;
+    }
+}
+
+.baseline-container--manual {
+    min-height: 400px;
+
+    td.baseline-container__col {
+        height: 90px;
+
+        &--value {
+            min-width: 140px;
+        }
+    }
+
+    .input-group-append {
+        min-width: 60px;
+    }
+
+    .baseline-container__consumptin {
+
+    }
+
+    .baseline-container__cost {
+        margin-top: 4px;
+    }
+}
+
+.baseline-container--equations {
+
+    td.baseline-container__col {
+        height: 30px;
+
+        &--value {
+            // min-width: 140px;
+        }
+    }
+}

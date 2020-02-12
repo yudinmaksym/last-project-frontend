@@ -1,0 +1,297 @@
+.equations-modal {
+    max-width: 90vw;
+    
+    .modal-title {
+        width: 100%;
+    }
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+
+        &:after {
+            content: '';
+            position: absolute;
+            left: 36px;
+            top: 15px;
+            right: 38px;
+            height: 1px;
+            border-bottom: 1px solid #e9ecef;
+            pointer-events: none;
+            transform: translate3d(0, 0,0 );
+        }
+
+        &--step {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            cursor: pointer;
+            z-index: 1;
+
+            &--active {
+
+                .equations-modal__header--step__circle {
+                    background: #007bff;
+                    color: #fff;
+                }
+
+                .equations-modal__header--step__name{
+                    color: #007bff;
+                }
+            }
+        
+            &__circle {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                
+                border-radius: 50%;
+                text-align: center;
+                width: 1.875rem;
+                height: 1.875rem;
+                line-height: 1.875rem;
+                background: #e9ecef;
+                color: #818ea3;
+
+                &--icon {
+                    top: 0px !important;
+                }
+            }
+
+            &__name {
+                padding-top: 0.4em;
+                font-size: 1rem;
+                color: #818ea3;
+            }
+
+        }
+    }
+}
+
+.equations-list {
+    width: 100%;
+    min-height: 70vh;
+
+    .advanced-select {
+        flex: 1;
+    }
+
+    &__item {
+        &__remove {
+            position: absolute;
+            right: 0.625rem;
+            z-index: 1;
+        }
+    }
+}
+
+.equations-degree-days {
+    .form-group {
+        padding: 0px;
+        margin: 0px;
+
+        .form-control {
+            padding: 2px 4px;
+        }
+    }
+}
+
+.equation-field {
+    position: relative;
+    outline: 1px red;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    padding-right: 40px;
+
+
+    &__line {
+        width: 100%;
+        background: $reagent-gray;
+        height: 1px;
+        position: absolute;
+        top: 50%;
+    }
+
+    &--empty {
+        $field__variables::before {
+            display: none;
+        }
+    }
+
+    &__variables {
+        padding-right: 0.3em;
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+        align-items: center;
+
+        // &::before {
+        //     position: absolute;
+        //     top: 50%;
+        //     width: 100%;
+        //     transform: translate3d(0, 0, 0);
+        //     content: '';
+        //     border-top: 1px dotted $reagent-gray;
+        // }
+
+        &__variable {            
+            &--plus {
+                padding: 0px;
+                width: 36px;
+                height: 36px;
+            }
+
+            &--field {
+                padding: 0px;
+                min-width: 160px;
+
+                &--select {
+                    position: relative;
+                    text-align: left;
+                    font-size: 100%;
+                    font-weight: normal;
+                    
+                    .advanced-select {
+                        position: absolute;
+                        top: 0px;
+                        width: 100%;
+                    }
+
+                    &--real-value {
+                        visibility: hidden;
+                        padding-left: 11px;
+                        padding-right: 74px;
+                        display: inline-block;
+                        /* position: relative; */
+                        /* top: -15px; */
+                        height: 38px;
+                    }
+                }
+
+                &--input {
+                    min-width: 120px;
+                }
+
+                .advanced-select {
+                    &__control {
+                        background-color: transparent;
+                        // border: 0px;
+                        border-color: none !important;
+                        box-shadow: none;
+                        border-radius: 10rem;
+                    }
+                }
+            }
+
+            &__input {
+                width: 100%;
+                min-height: 36px;
+                border: 0px;
+                background: transparent;
+            }
+
+            &__select {
+                min-height: 36px;
+                padding-top: 0px;
+                padding-bottom: 0px;
+                border: 0px;
+                background: transparent;
+            }
+        }
+
+        &__container {
+            position: relative;
+
+            &:hover {
+                &__remove {
+                    background: red;
+                }
+            }
+
+            &__remove {
+                border: 0px;
+                position: absolute;
+                background: none !important;
+                width: 18px;
+                height: 16px;
+                padding: 0px;
+                transform: translate3d(-10px, -2px, 0);
+            }
+        }
+    }
+
+    &__add { 
+        &--button {
+            padding: 0px !important;
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+        }
+    }
+
+    &__tooltip {
+        display: flex;
+        justify-content: space-between;
+
+        &--button {
+            min-width: 20px;
+            height: 20px;
+            margin: 2px;
+            padding: 0px;
+        }
+    }
+}
+
+.equations-debug-formulas {
+    background: red;
+    
+    .list-group-item {
+        word-break: break-all
+    }
+}
+
+.equation-field__date-range {
+    display: flex;
+    justify-content: center;
+
+    .react-datepicker-wrapper {
+        flex: 1;
+    }
+
+    .react-datepicker__month {
+        cursor: pointer;
+
+        &-text {
+            display: inline-block;
+            width: 4rem;
+            margin: 2px;
+        }
+
+
+        &--in-range {
+            background: #e9ecef;
+            color: #818ea3;
+            border-radius: .3rem;
+        }
+
+        &--selected {
+            color: rgb(255, 255, 255);
+            background: rgb(0, 123, 255);
+            border-radius: .3rem;
+        }
+
+        &--disabled {
+            color: gray;
+            background: #f1f1f1;
+            border-radius: .3rem;
+          cursor: no-drop;
+
+        }
+    }
+}
+
+

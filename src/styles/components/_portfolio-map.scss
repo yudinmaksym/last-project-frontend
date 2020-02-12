@@ -1,0 +1,36 @@
+
+
+.pin_header {
+    color: #ffffff;
+    background: #016CA0 0% 0% no-repeat padding-box;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 10px 0;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.pin_container {
+    &_stat-item {
+        border-bottom: 1px solid rgba(30, 115, 190, 0.2);
+        padding: 10px 0;
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+        &_value {
+            font-size: 35px;
+            color: #D8A76F;
+            font-weight: bold;
+
+            &.green {
+                color: #61D389;
+            }
+        }
+
+        &_desc {
+            font-size: 15px;
+        }
+    }
+}

@@ -1,0 +1,34 @@
+// Daily Dashboard Custom Styles
+
+.project-route {
+    .route-item {
+        background-color: #fff;
+        border: 1px solid #4756EC;
+        color: #4756EC;
+        min-width: 50px;
+        padding: 10px 10px;
+        cursor: pointer;
+        border-radius: 3px;
+
+        &.active {
+            background-color: #4756EC;
+            border: 1px solid #4756EC;
+            color: #fff; 
+        }
+    }
+}
+
+@media(max-width: 992px) {
+    .daily_container {
+        margin-left: 0;
+    }
+
+    .daily_sidebar {
+        position: relative;
+        width: 100%;
+        top: 0;
+    }
+}
+
+
+
